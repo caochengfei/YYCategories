@@ -14,9 +14,8 @@
 @interface NSObject_YYAddForARC : NSObject @end
 @implementation NSObject_YYAddForARC @end
 
-#if __has_feature(objc_arc)
+#if !__has_feature(objc_arc)
 #error This file must be compiled without ARC. Specify the -fno-objc-arc flag to this file.
-#endif
 
 
 @implementation NSObject (YYAddForARC)
@@ -38,3 +37,4 @@
 }
 
 @end
+#endif

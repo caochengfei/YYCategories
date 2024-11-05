@@ -15,9 +15,8 @@
 @interface NSThread_YYAdd : NSObject @end
 @implementation NSThread_YYAdd @end
 
-#if __has_feature(objc_arc)
+#if !__has_feature(objc_arc)
 #error This file must be compiled without ARC. Specify the -fno-objc-arc flag to this file.
-#endif
 
 static NSString *const YYNSThreadAutoleasePoolKey = @"YYNSThreadAutoleasePoolKey";
 static NSString *const YYNSThreadAutoleasePoolStackKey = @"YYNSThreadAutoleasePoolStackKey";
@@ -105,3 +104,5 @@ static void YYRunloopAutoreleasePoolSetup() {
 }
 
 @end
+
+#endif
